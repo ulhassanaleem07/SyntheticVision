@@ -1,11 +1,30 @@
-.next
+# Dependencies
 node_modules
 .pnpm-store
+
+# Next.js
+.next
 out
 dist
+
+# Production and tooling caches
+.turbo
+.vercel
+coverage
+playwright-report
+test-results
+*.tsbuildinfo
+
+# Environment
 .env
 .env*.local
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+
+# OS files
 .DS_Store
+Thumbs.db
