@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Synthetic Vision showreel placeholder">
+  <rect width="1600" height="900" fill="#03070a"/>
+  <circle cx="780" cy="380" r="420" fill="#c8ff2e" opacity="0.16"/>
+  <circle cx="260" cy="220" r="260" fill="#c8ff2e" opacity="0.09"/>
+  <circle cx="1280" cy="120" r="280" fill="#ffffff" opacity="0.05"/>
+  <path d="M0 650c170-58 327-78 470-60 196 25 365 116 562 128 199 12 381-57 568-145v327H0z" fill="#c8ff2e" opacity="0.07"/>
+  <g opacity="0.13">
+    <path d="M0 130h1600M0 260h1600M0 390h1600M0 520h1600M0 650h1600M0 780h1600" stroke="#c8ff2e"/>
+    <path d="M160 0v900M320 0v900M480 0v900M640 0v900M800 0v900M960 0v900M1120 0v900M1280 0v900M1440 0v900" stroke="#c8ff2e"/>
+  </g>
+</svg>
