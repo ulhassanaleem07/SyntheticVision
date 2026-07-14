@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { WatchReelModal } from "@/components/watch-reel-modal";
 import { workCategories } from "@/lib/work";
 
 const aiToolGroups = [
@@ -138,8 +137,6 @@ export default function Home() {
               <p className="mt-8 text-xl font-medium text-[#c8ff2e] sm:text-2xl">
                 Vision, powered by AI.
               </p>
-
-              <WatchReelModal className="mt-8 border-[#c8ff2e]/70 px-5 py-3 text-white" />
             </div>
           </div>
         </div>

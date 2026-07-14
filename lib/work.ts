@@ -23,7 +23,7 @@ export const workCategories: WorkCategory[] = [
       "Fast, believable UGC-style content with consistent faces, voices, products, logos, and brand cues across every variation.",
     accent:
       "bg-[radial-gradient(circle_at_42%_24%,rgba(200,255,46,0.34),transparent_32%),linear-gradient(145deg,rgba(255,255,255,0.16),rgba(255,255,255,0.03))]",
-    thumbnailUrl: "https://i.ytimg.com/vi/nBDIU-l0Yxs/hqdefault.jpg",
+    thumbnailUrl: "/work/ai-ugc-ads.png",
     videos: [
       { title: "AI UGC Ad 01", provider: "youtube", id: "nBDIU-l0Yxs" },
       { title: "AI UGC Ad 02", provider: "youtube", id: "KktRIH58Dzg" },
@@ -37,7 +37,7 @@ export const workCategories: WorkCategory[] = [
       "Cinematic property-led DVCs with consistent hosts, architectural mood, location storytelling, and polished edit pacing.",
     accent:
       "bg-[radial-gradient(circle_at_68%_28%,rgba(200,255,46,0.30),transparent_30%),linear-gradient(155deg,rgba(255,255,255,0.13),rgba(255,255,255,0.025))]",
-    thumbnailUrl: "https://i.ytimg.com/vi/yOcuzXTmZ-I/hqdefault.jpg",
+    thumbnailUrl: "/work/real-estate-dvcs.png",
     videos: [
       { title: "Ishbiliya", provider: "youtube", id: "yOcuzXTmZ-I" },
       { title: "HS Villas", provider: "youtube", id: "NIifdcu1UKc" },
@@ -51,7 +51,7 @@ export const workCategories: WorkCategory[] = [
       "Sharp corporate stories where AI characters, company colors, logo placement, and campaign tone stay aligned.",
     accent:
       "bg-[radial-gradient(circle_at_34%_34%,rgba(200,255,46,0.28),transparent_28%),linear-gradient(165deg,rgba(255,255,255,0.15),rgba(255,255,255,0.03))]",
-    thumbnailUrl: "https://i.ytimg.com/vi/XvnJotVfwQE/hqdefault.jpg",
+    thumbnailUrl: "/work/corporate-dvcs.png",
     videos: [
       { title: "MG Car", provider: "youtube", id: "XvnJotVfwQE" },
     ],
@@ -64,7 +64,7 @@ export const workCategories: WorkCategory[] = [
       "Trailer-style launch films for products, events, and campaigns, built around memorable characters and cinematic momentum.",
     accent:
       "bg-[radial-gradient(circle_at_58%_20%,rgba(200,255,46,0.36),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.14),rgba(255,255,255,0.025))]",
-    thumbnailUrl: "https://i.ytimg.com/vi/LG-FwSRtTG0/hqdefault.jpg",
+    thumbnailUrl: "/work/ai-generated-trailers.png",
     videos: [
       { title: "AI Generated Trailer 01", provider: "youtube", id: "LG-FwSRtTG0" },
       { title: "AI Generated Trailer 02", provider: "youtube", id: "JT0gzTu_bf0" },
