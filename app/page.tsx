@@ -1,13 +1,11 @@
 import {
   ArrowUpRight,
-  Clapperboard,
   Layers3,
   Mail,
-  Play,
   Wand2,
 } from "lucide-react";
-import Link from "next/link";
 
+import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -18,7 +16,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { workCategories } from "@/lib/work";
+import { WorkVideoShowcase } from "@/components/work-video-showcase";
 
 const aiToolGroups = [
   {
@@ -67,7 +65,7 @@ export default function Home() {
       <section className="mx-auto min-h-screen overflow-hidden rounded-lg bg-[#03070a] shadow-2xl">
         <div className="relative min-h-[calc(100vh-3rem)] overflow-hidden">
           <iframe
-            title="Synthetic Vision showreel background"
+            title="Synthetic Visuals showreel background"
             src={`https://www.youtube-nocookie.com/embed/${HERO_REEL_ID}?autoplay=1&mute=1&loop=1&playlist=${HERO_REEL_ID}&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&disablekb=1`}
             allow="autoplay; encrypted-media; picture-in-picture"
             tabIndex={-1}
@@ -80,19 +78,7 @@ export default function Home() {
 
           <div className="relative z-10">
             <header className="relative flex items-center justify-between px-5 py-6 sm:px-8 lg:px-12">
-              <a href="#" className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-md bg-[#c8ff2e] text-black">
-                  <Clapperboard className="size-5" />
-                </span>
-                <span className="flex flex-col">
-                  <span className="font-display text-3xl leading-none text-white">
-                    SYNTHETIC VISION
-                  </span>
-                  <span className="text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-white/55">
-                    by Aleem
-                  </span>
-                </span>
-              </a>
+              <BrandLogo />
               <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 text-sm text-white/65 md:flex">
                 <a className="hover:text-white" href="#work">
                   Work
@@ -104,18 +90,38 @@ export default function Home() {
                   Process
                 </a>
                 <a
+                  className="rounded-md border border-[#c8ff2e]/55 bg-white/[0.03] px-4 py-2 font-semibold text-white transition"
+                  href="/masterclass"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Join Master Class
+                </a>
+                <a
                   className="rounded-md bg-[#c8ff2e] px-4 py-2 font-semibold text-black transition hover:bg-[#d8ff63]"
                   href="#contact"
                 >
                   Let&apos;s Create
                 </a>
               </nav>
-              <Button asChild size="sm" className="bg-[#c8ff2e] text-black hover:bg-[#d8ff63] md:hidden">
-                <a href="#contact">
-                  Let&apos;s Create
-                  <ArrowUpRight />
-                </a>
-              </Button>
+              <div className="flex items-center gap-2 md:hidden">
+                <Button
+                  asChild
+                  size="sm"
+                  variant="outline"
+                  className="border-[#c8ff2e]/55 bg-white/[0.03] px-3 text-white"
+                >
+                  <a href="/masterclass" target="_blank" rel="noreferrer">
+                    Join
+                  </a>
+                </Button>
+                <Button asChild size="sm" className="bg-[#c8ff2e] text-black hover:bg-[#d8ff63]">
+                  <a href="#contact">
+                    Let&apos;s Create
+                    <ArrowUpRight />
+                  </a>
+                </Button>
+              </div>
             </header>
 
             <div className="mx-auto flex max-w-5xl flex-col items-center px-5 pb-14 pt-20 text-center sm:px-8 lg:pt-28">
@@ -141,54 +147,12 @@ export default function Home() {
           </div>
         </div>
 
-        <section id="work" className="border-t border-[#c8ff2e]/25 px-5 py-14 sm:px-8">
-          <div className="mx-auto max-w-6xl">
-            <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-              <div>
-                <p className="text-sm font-semibold uppercase text-[#c8ff2e]">
-                  Work system
-                </p>
-                <h2 className="mt-2 font-display text-6xl leading-none text-white sm:text-7xl">
-                  Consistency first.
-                </h2>
-              </div>
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-              {workCategories.map((item) => (
-                <Link
-                  href={`/work/${item.slug}`}
-                  key={item.slug}
-                  className="group overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] transition duration-300 hover:scale-[1.018] hover:border-[#c8ff2e]/70 hover:shadow-[0_0_34px_rgba(200,255,46,0.20)]"
-                >
-                  <div className={`relative aspect-[4/5] overflow-hidden p-4 ${item.accent}`}>
-                    <div
-                      className="absolute inset-0 bg-cover bg-center opacity-55 transition duration-500 group-hover:scale-105 group-hover:opacity-70"
-                      style={{ backgroundImage: `url(${item.thumbnailUrl})` }}
-                    />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,7,10,0.18),rgba(3,7,10,0.74)),radial-gradient(circle_at_50%_20%,rgba(200,255,46,0.18),transparent_34%)]" />
-                    <div className="relative flex h-full flex-col justify-between rounded-md border border-white/10 bg-black/30 p-4 backdrop-blur-[2px]">
-                      <div className="flex items-center justify-between">
-                        <span className="rounded-full border border-[#c8ff2e]/40 px-3 py-1 text-xs font-semibold uppercase text-[#c8ff2e]">
-                          {item.label}
-                        </span>
-                        <span className="flex size-10 items-center justify-center rounded-full border border-white/15 bg-black/35 text-white/70 transition group-hover:border-[#c8ff2e]/60 group-hover:text-[#c8ff2e]">
-                          <Play className="size-4 fill-current" />
-                        </span>
-                      </div>
-                      <h3 className="font-display text-5xl leading-none text-white">
-                        {item.title}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-sm text-white/55">
-                      Open gallery
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+        <section
+          id="work"
+          className="border-t border-[#c8ff2e]/25 px-5 py-14 sm:px-8"
+        >
+          <div className="mx-auto grid max-w-6xl gap-14">
+            <WorkVideoShowcase />
           </div>
         </section>
 
@@ -333,9 +297,7 @@ export default function Home() {
 
         <footer className="border-t border-[#c8ff2e]/25 px-5 py-8 sm:px-8">
           <div className="mx-auto flex max-w-6xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-display text-3xl leading-none text-white">
-              SYNTHETIC VISION
-            </p>
+            <BrandLogo size="sm" />
             <div className="flex gap-3">
               <Button asChild variant="outline" className="border-[#c8ff2e]/35 bg-white/[0.03]">
                 <a href="https://www.linkedin.com/in/aleem-ul-hassan/" target="_blank" rel="noreferrer">

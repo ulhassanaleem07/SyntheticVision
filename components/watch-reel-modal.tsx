@@ -86,7 +86,7 @@ export function WatchReelModal({ className }: WatchReelModalProps) {
               <div className="overflow-hidden rounded-lg border border-[#c8ff2e]/45 bg-black shadow-[0_0_90px_rgba(200,255,46,0.18)]">
                 <div className="aspect-video">
                   <iframe
-                    title="Synthetic Vision showreel"
+                    title="Synthetic Visuals showreel"
                     src={`https://player.vimeo.com/video/${VIMEO_ID}?autoplay=1&muted=0&title=0&byline=0&portrait=0`}
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowFullScreen

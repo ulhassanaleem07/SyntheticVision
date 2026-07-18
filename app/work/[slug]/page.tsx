@@ -1,8 +1,9 @@
-import { ArrowLeft, Clapperboard } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { Card } from "@/components/ui/card";
+import { BrandLogo } from "@/components/brand-logo";
+import { VideoLightboxGrid } from "@/components/video-lightbox-grid";
 import { getWorkCategory, workCategories } from "@/lib/work";
 
 type WorkCategoryPageProps = {
@@ -26,17 +27,9 @@ export async function generateMetadata({ params }: WorkCategoryPageProps) {
   }
 
   return {
-    title: `${category.title} | SYNTHETIC VISION by Aleem`,
+    title: `${category.title} | SYNTHETIC VISUALS by Aleem`,
     description: category.description,
   };
-}
-
-function getEmbedUrl(video: { provider: "vimeo" | "youtube"; id: string }) {
-  if (video.provider === "youtube") {
-    return `https://www.youtube.com/embed/${video.id}`;
-  }
-
-  return `https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0`;
 }
 
 export default async function WorkCategoryPage({
@@ -49,6 +42,14 @@ export default async function WorkCategoryPage({
     notFound();
   }
 
+  const galleryVideos = category.videos.map((video) => ({
+    ...video,
+    categoryLabel: category.label,
+    categorySlug: category.slug,
+    categoryTitle: category.title,
+    thumbnailUrl: video.thumbnailUrl,
+  }));
+
   return (
     <main className="min-h-screen bg-[#03070a] p-2 text-[#f7f9f0] sm:p-3">
       <div className="edge-lines" />
@@ -59,19 +60,7 @@ export default async function WorkCategoryPage({
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(200,255,46,0.18),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0))]" />
           <div className="relative z-10">
             <header className="flex items-center justify-between">
-              <Link href="/#work" className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-md bg-[#c8ff2e] text-black">
-                  <Clapperboard className="size-5" />
-                </span>
-                <span className="flex flex-col">
-                  <span className="font-display text-3xl leading-none text-white">
-                    SYNTHETIC VISION
-                  </span>
-                  <span className="text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-white/55">
-                    by Aleem
-                  </span>
-                </span>
-              </Link>
+              <BrandLogo href="/#work" />
 
               <Link
                 href="/#work"
@@ -93,29 +82,8 @@ export default async function WorkCategoryPage({
                 {category.description}
               </p>
 
-              <div className="mt-10 grid gap-5 lg:grid-cols-2">
-                {category.videos.map((video) => (
-                  <Card
-                    key={video.title}
-                    className="overflow-hidden border-white/10 bg-white/[0.04]"
-                  >
-                    <div className="aspect-video bg-black">
-                      <iframe
-                        title={video.title}
-                        src={getEmbedUrl(video)}
-                        allow="autoplay; fullscreen; picture-in-picture"
-                        allowFullScreen
-                        loading="lazy"
-                        className="h-full w-full"
-                      />
-                    </div>
-                    <div className="border-t border-white/10 p-4">
-                      <h2 className="font-display text-3xl leading-none text-white">
-                        {video.title}
-                      </h2>
-                    </div>
-                  </Card>
-                ))}
+              <div className="mt-10">
+                <VideoLightboxGrid videos={galleryVideos} />
               </div>
             </div>
           </div>
